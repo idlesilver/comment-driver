@@ -1,22 +1,25 @@
 <p align="center">
-  <img alt="Comment Divider" src="https://github.com/stackbreak/comment-divider/raw/master/img/logo_256.png" width="20%"  />
+  <img alt="Comment Divider" src="https://github.com/idlesilver/comment-divider/raw/master/img/logo_256.png" width="20%"  />
 </p>
 
 <h1 align="center">
   Comment Divider
 </h1>
 
-This is **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension, which provides commands for generating comment-wrapped separators from line content.
+This is **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension, forked from **[stackbreak/comment-divider](https://github.com/stackbreak/comment-divider)** which provides commands for generating comment-wrapped separators from line content.
 
+## Added features:
 - Works with multi-cursor and multi-line selections.
 - Smartly toggles decorated dividers when you rerun commands on existing lines.
 - Handles whitespace-only lines by filling them with a solid divider automatically.
+
+see **[CHANGELOG](./CHANGELOG.md)** for detail
 
 **[Supports all common languages](#language-support).**
 
 ## Install
 
-https://marketplace.visualstudio.com/items?itemName=stackbreak.comment-divider
+https://marketplace.visualstudio.com/items?itemName=idlesilver.comment-divider
 
 ## Demo
 

@@ -8,6 +8,10 @@
 
 This is **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension, which provides commands for generating comment-wrapped separators from line content.
 
+- Works with multi-cursor and multi-line selections.
+- Smartly toggles decorated dividers when you rerun commands on existing lines.
+- Handles whitespace-only lines by filling them with a solid divider automatically.
+
 **[Supports all common languages](#language-support).**
 
 ## Install
@@ -57,6 +61,14 @@ https://marketplace.visualstudio.com/items?itemName=stackbreak.comment-divider
   ```
   /* -------------------------------------------------------------------------- */
   ```
+
+## Smart behavior
+
+- Commands run on every line covered by the current selections or cursors.
+- Running a header command on a whitespace-only line inserts a solid divider instead.
+- Repeating **Make Subheader** on one of its own dividers collapses it back to a plain comment.
+- Running **Make Main Header** on a subheader divider upgrades it to the main header style without duplicating fillers.
+- Running a header command on a solid divider removes the divider, leaving just the indentation.
 
 ## Language Support
 

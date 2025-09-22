@@ -2,6 +2,14 @@
 
 All notable changes to the "Comment Divider" extension will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Multi-selection support for divider commands so every selected line is updated in one pass.
+- Smart handling for existing dividers: re-running subheader commands collapses to plain comments, main headers upgrade subheaders, and header commands clear solid divider lines.
+- Automatic solid divider insertion when header commands run on empty or whitespace-only lines.
+
 ## [0.4.0] - 2020-05-18
 
 ### Enhancement

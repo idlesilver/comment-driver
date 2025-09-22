@@ -1,31 +1,53 @@
-import { window, TextEditor } from 'vscode';
+import { Selection, TextEditor, window } from 'vscode';
 
-import { handleError, checkMultiLineSelection } from './errors';
+import { handleError } from './errors';
 import { insertDividerAction } from './actions';
 import { PresetId } from './types';
 
-const getEditorState = (editor: TextEditor) => {
-  const selection = editor.selection;
+const getLineNumbersFromSelection = (selection: Selection): number[] => {
+  if (selection.isEmpty) {
+    return [selection.active.line];
+  }
 
-  checkMultiLineSelection(selection);
+  let startLine = selection.start.line;
+  let endLine = selection.end.line;
 
-  const document = editor.document;
-  const lang = document.languageId;
-  const line = document.lineAt(selection.active.line);
+  if (selection.end.character === 0 && selection.end.line > selection.start.line) {
+    endLine -= 1;
+  }
 
-  return {
-    line,
-    lang
-  };
+  const lines: number[] = [];
+
+  for (let line = startLine; line <= endLine; line += 1) {
+    lines.push(line);
+  }
+
+  return lines.length ? lines : [selection.active.line];
 };
 
-const generateCommand = (type: PresetId) => () => {
+const getTargetLineNumbers = (editor: TextEditor): number[] => {
+  const lineNumbers = new Set<number>();
+
+  for (const selection of editor.selections) {
+    getLineNumbersFromSelection(selection).forEach((line) => lineNumbers.add(line));
+  }
+
+  return Array.from(lineNumbers).sort((a, b) => b - a);
+};
+
+const generateCommand = (type: PresetId) => async () => {
   try {
     const editor = window.activeTextEditor;
     if (!editor) return;
 
-    const { lang, line } = getEditorState(editor);
-    insertDividerAction(type, line, lang);
+    const document = editor.document;
+    const lang = document.languageId;
+    const lineNumbers = getTargetLineNumbers(editor);
+
+    for (const lineNumber of lineNumbers) {
+      const line = document.lineAt(lineNumber);
+      await insertDividerAction(type, line, lang);
+    }
   } catch (e) {
     handleError(e);
   }

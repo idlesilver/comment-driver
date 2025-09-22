@@ -1,9 +1,9 @@
 <p align="center">
-  <img alt="Comment Divider" src="https://github.com/idlesilver/comment-divider/raw/master/img/logo_256.png" width="20%"  />
+  <img alt="Comment Driver" src="https://github.com/idlesilver/comment-driver/raw/master/img/logo_256.png" width="20%"  />
 </p>
 
 <h1 align="center">
-  Comment Divider
+  Comment Driver
 </h1>
 
 This is **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension, forked from **[stackbreak/comment-divider](https://github.com/stackbreak/comment-divider)** which provides commands for generating comment-wrapped separators from line content.

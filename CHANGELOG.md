@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "Comment Divider" extension will be documented in this file.
+All notable changes to the "Comment Driver" & "Comment Divider" extension will be documented in this file.
 
 ## [0.5.0]
 

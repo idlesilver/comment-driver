@@ -1,6 +1,6 @@
 {
-  "name": "comment-divider",
-  "displayName": "Comment Divider",
+  "name": "comment-driver",
+  "displayName": "Comment Driver",
   "description": "Divide your code by sections with styled separators.",
   "version": "0.5.0",
   "publisher": "idlesilver",
@@ -8,10 +8,10 @@
   "icon": "img/logo_256.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/idlesilver/comment-divider"
+    "url": "https://github.com/idlesilver/comment-driver"
   },
   "bugs": {
-    "url": "https://github.com/idlesilver/comment-divider/issues"
+    "url": "https://github.com/idlesilver/comment-driver/issues"
   },
   "engines": {
     "vscode": "^1.28.0"
@@ -27,64 +27,64 @@
     "section"
   ],
   "activationEvents": [
-    "onCommand:comment-divider.makeSubHeader",
-    "onCommand:comment-divider.makeMainHeader",
-    "onCommand:comment-divider.insertSolidLine"
+    "onCommand:comment-driver.makeSubHeader",
+    "onCommand:comment-driver.makeMainHeader",
+    "onCommand:comment-driver.insertSolidLine"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "comment-divider.makeSubHeader",
-        "title": "Comment Divider: Make Subheader"
+        "command": "comment-driver.makeSubHeader",
+        "title": "Comment Driver: Make Subheader"
       },
       {
-        "command": "comment-divider.makeMainHeader",
-        "title": "Comment Divider: Make Main Header"
+        "command": "comment-driver.makeMainHeader",
+        "title": "Comment Driver: Make Main Header"
       },
       {
-        "command": "comment-divider.insertSolidLine",
-        "title": "Comment Divider: Insert Solid Line"
+        "command": "comment-driver.insertSolidLine",
+        "title": "Comment Driver: Insert Solid Line"
       }
     ],
     "keybindings": [
       {
-        "command": "comment-divider.makeSubHeader",
+        "command": "comment-driver.makeSubHeader",
         "key": "alt+x",
         "when": "editorTextFocus"
       },
       {
-        "command": "comment-divider.makeMainHeader",
+        "command": "comment-driver.makeMainHeader",
         "key": "shift+alt+x",
         "when": "editorTextFocus"
       },
       {
-        "command": "comment-divider.insertSolidLine",
+        "command": "comment-driver.insertSolidLine",
         "key": "alt+y",
         "when": "editorTextFocus"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Comment Divider",
+      "title": "Comment Driver",
       "properties": {
-        "comment-divider.length": {
+        "comment-driver.length": {
           "type": "number",
           "default": 80,
           "description": "Set line length for all dividers."
         },
-        "comment-divider.shouldLengthIncludeIndent": {
+        "comment-driver.shouldLengthIncludeIndent": {
           "type": "boolean",
           "default": false,
           "description": "Set whether the divider will be shrink consider indent size, or will be always fixed length."
         },
-        "comment-divider.mainHeaderFiller": {
+        "comment-driver.mainHeaderFiller": {
           "type": "string",
           "minLength": 1,
           "maxLength": 1,
           "default": "-",
           "description": "Set symbol for main header line filling (only one)."
         },
-        "comment-divider.mainHeaderHeight": {
+        "comment-driver.mainHeaderHeight": {
           "type": "string",
           "enum": [
             "block",
@@ -93,7 +93,7 @@
           "default": "block",
           "description": "Set main header vertical style."
         },
-        "comment-divider.mainHeaderAlign": {
+        "comment-driver.mainHeaderAlign": {
           "type": "string",
           "enum": [
             "center",
@@ -103,7 +103,7 @@
           "default": "center",
           "description": "Set main header text align."
         },
-        "comment-divider.mainHeaderTransform": {
+        "comment-driver.mainHeaderTransform": {
           "type": "string",
           "enum": [
             "uppercase",
@@ -114,14 +114,14 @@
           "default": "none",
           "description": "Set main header text transform style."
         },
-        "comment-divider.subheaderFiller": {
+        "comment-driver.subheaderFiller": {
           "type": "string",
           "minLength": 1,
           "maxLength": 1,
           "default": "-",
           "description": "Set symbol for subheader line filling (only one)."
         },
-        "comment-divider.subheaderHeight": {
+        "comment-driver.subheaderHeight": {
           "type": "string",
           "enum": [
             "block",
@@ -130,7 +130,7 @@
           "default": "line",
           "description": "Set subheader vertical style."
         },
-        "comment-divider.subheaderAlign": {
+        "comment-driver.subheaderAlign": {
           "type": "string",
           "enum": [
             "center",
@@ -140,7 +140,7 @@
           "default": "center",
           "description": "Set subheader text align."
         },
-        "comment-divider.subheaderTransform": {
+        "comment-driver.subheaderTransform": {
           "type": "string",
           "enum": [
             "uppercase",
@@ -151,14 +151,14 @@
           "default": "none",
           "description": "Set subheader text transform style."
         },
-        "comment-divider.lineFiller": {
+        "comment-driver.lineFiller": {
           "type": "string",
           "minLength": 1,
           "maxLength": 1,
           "default": "-",
           "description": "Set symbol for solid line filling."
         },
-        "comment-divider.languagesMap": {
+        "comment-driver.languagesMap": {
           "type": "object",
           "uniqueItems": true,
           "patternProperties": {

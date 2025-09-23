@@ -2,7 +2,7 @@
 
 All notable changes to the "Comment Driver" & "Comment Divider" extension will be documented in this file.
 
-## [0.5.0]
+## [0.5.0] - 2025-09-23
 
 ### Enhancement
 
@@ -21,10 +21,10 @@ comment style transition matrix
 | main-header  | above rules for each line  | above rules for each line  |
 
 in short:
-empty <--> solid line
-code --> comment
-comment --alt+x--> sub-header
-comment --alt+shift+x--> main-header
+- empty <--> solid line
+- code --> comment header
+- comment --alt+x--> sub-header
+- comment --alt+shift+x--> main-header
 
 ## [0.4.0] - 2020-05-18
 

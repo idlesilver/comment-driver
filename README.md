@@ -1,29 +1,52 @@
 <p align="center">
-  <img alt="Comment Driver" src="https://github.com/idlesilver/comment-driver/raw/master/img/logo_256.png" width="20%"  />
+  <img alt="Smart Separators" src="https://github.com/idlesilver/smart-separators/raw/master/img/logo_256.png" width="20%"  />
 </p>
 
 <h1 align="center">
-  Comment Driver
+  Smart Separators
 </h1>
 
-This is **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension, forked from **[stackbreak/comment-divider](https://github.com/stackbreak/comment-divider)** which provides commands for generating comment-wrapped separators from line content.
+**Smart Separators** is a **[Visual Studio Code](https://github.com/Microsoft/vscode)** extension for turning selected lines into formatted comment separators.
 
-## Added features:
-- Works with multi-cursor and multi-line selections.
-- Smartly toggles decorated dividers when you rerun commands on existing lines.
-- Handles whitespace-only lines by filling them with a solid divider automatically.
+## Fork notice
 
-see **[CHANGELOG](./CHANGELOG.md)** for detail
+**Smart Separators is a fork of [Comment Divider](https://github.com/stackbreak/comment-divider). It is not the original Comment Divider extension.**
+
+This fork keeps the original idea of language-aware section dividers, but changes the extension identity, command namespace, settings namespace, logo, README, and editing behavior so it is clearly distinguishable on the VS Code Marketplace.
+
+## How this fork differs from Comment Divider
+
+- Multi-cursor and multi-line selections are handled in one command run.
+- Rerunning commands on existing dividers toggles or upgrades them instead of stacking more filler text.
+- Whitespace-only lines are treated as solid divider insertion targets.
+- Settings and commands use the `smart-separators` namespace, so they can live beside the original extension without sharing configuration keys.
+- Marketplace identity uses the name **Smart Separators** and the extension ID `idlesilver.smart-separators`.
+
+See **[CHANGELOG](./CHANGELOG.md)** for release details.
 
 **[Supports all common languages](#language-support).**
 
 ## Install
 
-https://marketplace.visualstudio.com/items?itemName=idlesilver.comment-divider
+https://marketplace.visualstudio.com/items?itemName=idlesilver.smart-separators
 
 ## Demo
 
 ![Subheader Demo](img/sub-header.gif)
+
+## Smart behavior added by this fork
+
+- Commands run on every line covered by the current selections or cursors.
+- Running a header command on a whitespace-only line inserts a solid divider instead.
+- Repeating **Make Subheader** on one of its own dividers collapses it back to a plain comment.
+- Running **Make Main Header** on a subheader divider upgrades it to the main header style without duplicating fillers.
+- Running a header command on a solid divider removes the divider, leaving just the indentation.
+
+---
+
+## Reference documentation copied from Comment Divider
+
+The sections below describe the original command styles, language support, and configuration model inherited from **[Comment Divider](https://github.com/stackbreak/comment-divider)**. They are copied or adapted from the original Comment Divider README, with names and setting keys updated for **Smart Separators**.
 
 ## Commands
 
@@ -65,14 +88,6 @@ https://marketplace.visualstudio.com/items?itemName=idlesilver.comment-divider
   /* -------------------------------------------------------------------------- */
   ```
 
-## Smart behavior
-
-- Commands run on every line covered by the current selections or cursors.
-- Running a header command on a whitespace-only line inserts a solid divider instead.
-- Repeating **Make Subheader** on one of its own dividers collapses it back to a plain comment.
-- Running **Make Main Header** on a subheader divider upgrades it to the main header style without duplicating fillers.
-- Running a header command on a solid divider removes the divider, leaving just the indentation.
-
 ## Language Support
 
 Extension uses relevant comment characters for all common languages.
@@ -97,12 +112,12 @@ or in html files
 
 ```json
   // Set line length for all dividers.
-  "comment-divider.length": 80,
+  "smart-separators.length": 80,
 ```
 
 ```json
   // Set whether the divider will be shrink consider indent size, or will be always fixed length.
-  "comment-divider.shouldLengthIncludeIndent": false,
+  "smart-separators.shouldLengthIncludeIndent": false,
 ```
 
 - **if `shouldLengthIncludeIndent: false`**
@@ -130,39 +145,39 @@ or in html files
 
 ```json
   // "Set symbol for main header line filling (only one).
-  "comment-divider.mainHeaderFiller": "-",
+  "smart-separators.mainHeaderFiller": "-",
 
   // Set main header vertical style.
-  "comment-divider.mainHeaderHeight": "block",
+  "smart-separators.mainHeaderHeight": "block",
 
   // Set main header text align.
-  "comment-divider.mainHeaderAlign": "center",
+  "smart-separators.mainHeaderAlign": "center",
 
   // Set main header text transform style.
-  "comment-divider.mainHeaderTransform": "none",
+  "smart-separators.mainHeaderTransform": "none",
 ```
 
 ### Subheader
 
 ```json
   // "Set symbol for subheader line filling (only one).
-  "comment-divider.subheaderFiller": "-",
+  "smart-separators.subheaderFiller": "-",
 
   // Set subheader vertical style.
-  "comment-divider.subheaderHeight": "line",
+  "smart-separators.subheaderHeight": "line",
 
   // Set subheader text align.
-  "comment-divider.subheaderAlign": "center",
+  "smart-separators.subheaderAlign": "center",
 
   // Set subheader text transform style.
-  "comment-divider.subheaderTransform": "none",
+  "smart-separators.subheaderTransform": "none",
 ```
 
 ### Solid Line
 
 ```json
   // Set symbol for solid line filling.
-  "comment-divider.lineFiller": "-",
+  "smart-separators.lineFiller": "-",
 ```
 
 ## Languages Configuration
@@ -170,7 +185,7 @@ or in html files
 If some language is not supported out of the box, or you want to change default comment characters for an already supported language, it is possible to do it in the settings.
 
 ```json
-"comment-divider.languagesMap": {
+"smart-separators.languagesMap": {
       "toml": ["#", "#"],
       "scss": ["//"]
 }
@@ -190,4 +205,8 @@ The example above defines the right characters for `toml` and overrides `scss` d
 
 ## Issues
 
-Request features and report bugs using [GitHub](https://github.com/stackbreak/comment-divider/issues).
+Request features and report bugs using [GitHub](https://github.com/idlesilver/smart-separators/issues).
+
+---
+
+The command, language support, and configuration documentation above is copied or adapted from **Comment Divider** documentation and updated for the **Smart Separators** fork.

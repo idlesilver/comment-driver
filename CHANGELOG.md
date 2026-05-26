@@ -1,6 +1,15 @@
 # Change Log
 
-All notable changes to the "Comment Driver" & "Comment Divider" extension will be documented in this file.
+All notable changes to the "Smart Separators" extension will be documented in this file.
+
+## [0.5.1] - 2026-05-25
+
+### Marketplace metadata
+
+- Updated the marketplace display name, description, icon, and README to clearly distinguish this fork from Comment Divider.
+- Clarified the fork relationship and the added smart multi-cursor behavior.
+- Corrected documentation links and setting examples to use the `smart-separators` namespace.
+- Reworked the README fork notice and refreshed the icon for the Smart Separators identity.
 
 ## [0.5.0] - 2025-09-23
 

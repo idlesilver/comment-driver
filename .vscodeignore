@@ -3,6 +3,7 @@
 out/test/**
 out/**/*.map
 src/**
+img/logo_256_origin.png
 .gitignore
 .prettierrc
 tsconfig.json

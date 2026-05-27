@@ -2,9 +2,9 @@
 
 All notable changes to the "Smart Separators" extension will be documented in this file.
 
-## [0.5.1] - 2026-05-25
+## [0.6.0] - 2026-05-27
 
-### Marketplace metadata
+### v0.6 marketplace rebrand
 
 - Updated the marketplace display name, description, icon, and README to clearly distinguish this fork from Comment Divider.
 - Clarified the fork relationship and the added smart multi-cursor behavior.

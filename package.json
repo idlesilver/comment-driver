@@ -2,7 +2,7 @@
   "name": "smart-separators",
   "displayName": "Smart Separators",
   "description": "A fork of Comment Divider focused on multi-cursor editing, smart reruns, and cleaner code section separators.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "publisher": "idlesilver",
   "license": "GPL-3.0",
   "icon": "img/logo_256.png",
